@@ -11,11 +11,11 @@ import {
   Table,
 } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
-import "./AND.css";
+import "./NOT.css";
 import Sidebar from "../sidebar/sidebar";
-import andImage from "../../images/gates/and.jpg";
+import notImage from "../../images/gates/not.png";
 
-function And() {
+function Not() {
   const [inputA, setInputA] = useState("");
 
   const [updatedA, setUpdatedA] = useState(inputA);
@@ -41,12 +41,11 @@ function And() {
 
   function gateOutPut() {
     let gateOutput;
-      if (inputA == 1 && inputB == 1) {
-        gateOutput = "Output AB = True (1)";
-      } 
-      else {
-        gateOutput = "Output AB = False (0)";
-      }
+    if (inputA == 1) {
+      gateOutput = "Output AB = False (0)";
+    } else {
+      gateOutput = "Output AB = True (1)";
+    }
     return gateOutput;
   }
 
@@ -61,8 +60,8 @@ function And() {
           </Col>
           <Col md={10} style={{ paddingTop: "10vh" }}>
             <Card style={{ minHeight: "50vh" }}>
-              <CardHeader className="bg-success">
-                <h2 className="text-white">AND</h2>
+              <CardHeader className="bg-danger">
+                <h2 className="text-white">NOT</h2>
               </CardHeader>
 
               <p
@@ -75,17 +74,21 @@ function And() {
               >
                 <br />
                 <b>
-                  The AND gate is an electronic circuit that gives a high output
-                  (1) only if all its inputs are high. A dot (.) is used to show
-                  the AND operation i.e. A.B. Bear in mind that this dot is
-                  sometimes omitted i.e. AB
+                  The NOT gate is an electronic circuit that produces an
+                  inverted version of the input at its output. It is also known
+                  as an inverter. If the input variable is A, the inverted
+                  output is known as NOT A. This is also shown as A', or A with
+                  a bar over the top, as shown at the outputs. The diagrams
+                  below show two ways that the NAND logic gate can be configured
+                  to produce a NOT gate. It can also be done using NOR logic
+                  gates in the same way.
                 </b>
                 <br />
                 <br />
                 <Container>
                   <Row>
                     <Col md={3}>
-                      <Image src={andImage} style={{ height: "120px" }} />
+                      <Image src={notImage} style={{ height: "120px" }} />
                       <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>
@@ -102,7 +105,7 @@ function And() {
                             <option value="1">Input A = True (1)</option>
                           </Form.Select>
                           <br />
-                          <Form.Select
+                          {/* <Form.Select
                             aria-label="Default select example"
                             id="inputB"
                             name="inputB"
@@ -110,7 +113,7 @@ function And() {
                           >
                             <option value="0">Input B = False (0)</option>
                             <option value="1">Input B = True (1)</option>
-                          </Form.Select>
+                          </Form.Select> */}
 
                           <br />
                         </Form.Group>
@@ -140,30 +143,17 @@ function And() {
                         <thead>
                           <tr>
                             <th>A</th>
-                            <th>B</th>
-                            <th>AB</th>
+                            <th>NOT A</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>0</td>
                             <td>0</td>
                           </tr>
                           <tr>
                             <td>0</td>
                             <td>1</td>
-                            <td>0</td>
-                          </tr>
-                          <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
                           </tr>
                         </tbody>
                       </Table>
@@ -179,4 +169,4 @@ function And() {
   );
 }
 
-export default And;
+export default Not;

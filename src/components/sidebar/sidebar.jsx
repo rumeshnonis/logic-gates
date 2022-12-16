@@ -9,7 +9,7 @@ function sidebar() {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <Link to={"/"} className="nav-link bg-primary text-white">
+            <Link to={"/logic-gates"} className="nav-link bg-primary text-white">
               <b>Logic Gates</b>
             </Link>
           </li>
@@ -52,17 +52,17 @@ function sidebar() {
           <br />
           <li>
             <Link
-              to={"/exor"}
+              to={"/xor"}
               className="nav-link text-white"
               style={{ backgroundColor: "brown" }}
             >
-              <b>EXOR</b>
+              <b>XOR</b>
             </Link>
           </li>
           <br />
           <li>
-            <Link to={"/exnor"} className="nav-link bg-secondary text-white">
-              <b>EXNOR</b>
+            <Link to={"/xnor"} className="nav-link bg-secondary text-white">
+              <b>XNOR</b>
             </Link>
           </li>
         </ul>

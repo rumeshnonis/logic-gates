@@ -7,6 +7,12 @@ import Home from "./components/home/home";
 import Logicgates from "./components/Logic-gates/Logic-gates";
 import TruthTables from "./components/Truth-Tables/Truth-tables";
 import AND from "./components/AND/AND";
+import Or from "./components/OR/OR";
+import Not from "./components/NOT/NOT";
+import Nand from "./components/NAND/NAND";
+import Nor from "./components/NOR/NOR";
+import Xor from "./components/XOR/XOR";
+import Xnor from "./components/XNOR/XNOR";
 
 function App() {
   return (
@@ -15,14 +21,14 @@ function App() {
       <Routes>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/logic-gates" element={<Logicgates />} />
-      <Route exact path="/truth-table" element={<Logicgates />} />
+      <Route exact path="/truth-table" element={<TruthTables />} />
       <Route exact path="/and" element={<AND />} />
-      <Route exact path="/or" element={<Logicgates />} />
-      <Route exact path="/not" element={<Logicgates />} />
-      <Route exact path="/nand" element={<Logicgates />} />
-      <Route exact path="/nor" element={<Logicgates />} />
-      <Route exact path="/exor" element={<Logicgates />} />
-      <Route exact path="/exnor" element={<Logicgates />} />
+      <Route exact path="/or" element={<Or />} />
+      <Route exact path="/not" element={<Not />} />
+      <Route exact path="/nand" element={<Nand />} />
+      <Route exact path="/nor" element={<Nor />} />
+      <Route exact path="/xor" element={<Xor />} />
+      <Route exact path="/xnor" element={<Xnor />} />
       
       </Routes>
     </Router>

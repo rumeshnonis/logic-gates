@@ -11,11 +11,11 @@ import {
   Table,
 } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
-import "./AND.css";
+import "./XOR.css";
 import Sidebar from "../sidebar/sidebar";
-import andImage from "../../images/gates/and.jpg";
+import xorImage from "../../images/gates/xor.png";
 
-function And() {
+function Xor() {
   const [inputA, setInputA] = useState("");
 
   const [updatedA, setUpdatedA] = useState(inputA);
@@ -23,6 +23,11 @@ function And() {
   const handleChangeA = (event) => {
     setInputA(event.target.value);
   };
+
+  //const handleClickA = () => {
+  // 👇 "message" stores input field value
+  //setUpdatedA(inputA);
+  //};
 
   const [inputB, setInputB] = useState("");
 
@@ -41,12 +46,11 @@ function And() {
 
   function gateOutPut() {
     let gateOutput;
-      if (inputA == 1 && inputB == 1) {
-        gateOutput = "Output AB = True (1)";
-      } 
-      else {
-        gateOutput = "Output AB = False (0)";
-      }
+    if ((inputA == 0 && inputB == 0) || (inputA == 1 && inputB == 1)) {
+      gateOutput = "Output AB = False (0)";
+    } else {
+      gateOutput = "Output AB = True (1)";
+    }
     return gateOutput;
   }
 
@@ -61,8 +65,8 @@ function And() {
           </Col>
           <Col md={10} style={{ paddingTop: "10vh" }}>
             <Card style={{ minHeight: "50vh" }}>
-              <CardHeader className="bg-success">
-                <h2 className="text-white">AND</h2>
+              <CardHeader className="" style={{ backgroundColor: "brown" }}>
+                <h2 className="text-white">XOR</h2>
               </CardHeader>
 
               <p
@@ -75,17 +79,16 @@ function And() {
               >
                 <br />
                 <b>
-                  The AND gate is an electronic circuit that gives a high output
-                  (1) only if all its inputs are high. A dot (.) is used to show
-                  the AND operation i.e. A.B. Bear in mind that this dot is
-                  sometimes omitted i.e. AB
+                  The 'Exclusive-OR' gate is a circuit which will give a high
+                  output if either, but not both, of its two inputs are high. An
+                  encircled plus sign ( ) is used to show the EOR operation.
                 </b>
                 <br />
                 <br />
                 <Container>
                   <Row>
                     <Col md={3}>
-                      <Image src={andImage} style={{ height: "120px" }} />
+                      <Image src={xorImage} style={{ height: "120px" }} />
                       <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>
@@ -141,24 +144,24 @@ function And() {
                           <tr>
                             <th>A</th>
                             <th>B</th>
-                            <th>AB</th>
+                            <th>AB XOR</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>1</td>
                             <td>1</td>
-                            <td>1</td>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>0</td>
                             <td>0</td>
                           </tr>
                           <tr>
-                            <td>0</td>
                             <td>1</td>
                             <td>0</td>
+                            <td>1</td>
+                          </tr>
+                          <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>1</td>
                           </tr>
                           <tr>
                             <td>0</td>
@@ -179,4 +182,4 @@ function And() {
   );
 }
 
-export default And;
+export default Xor;

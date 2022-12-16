@@ -1,0 +1,19 @@
+6.NAND
+This is a NOT-AND gate which is equal to an AND gate followed by a NOT gate.  The outputs of all NAND gates are high if any of the inputs are low. The symbol is an AND gate with a small circle on the output. The small circle represents inversion.
+
+7.NOR
+This is a NOT-OR gate which is equal to an OR gate followed by a NOT gate.  The outputs of all NOR gates are low if any of the inputs are high.
+
+The symbol is an OR gate with a small circle on the output. The small circle represents inversion.
+
+8.XOR
+
+The 'Exclusive-OR' gate is a circuit which will give a high output if either, but not both, of its two inputs are high.  An encircled plus sign ( ) is used to show the EOR operation.
+
+9. XNOR
+The 'Exclusive-NOR' gate circuit does the opposite to the EOR gate. It will give a low output if either, but not both, of its two inputs are high. The symbol is an EXOR gate with a small circle on the output. The small circle represents inversion.
+
+10.Note
+The NAND and NOR gates are called universal functions since with either one the AND and OR functions and NOT can be generated.
+A function in sum of products form can be implemented using NAND gates by replacing all AND and OR gates by NAND gates.
+A function in product of sums form can be implemented using NOR gates by replacing all AND and OR gates by NOR gates.

@@ -11,11 +11,11 @@ import {
   Table,
 } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
-import "./AND.css";
+import "./NOR.css";
 import Sidebar from "../sidebar/sidebar";
-import andImage from "../../images/gates/and.jpg";
+import norImage from "../../images/gates/nor.png";
 
-function And() {
+function Nor() {
   const [inputA, setInputA] = useState("");
 
   const [updatedA, setUpdatedA] = useState(inputA);
@@ -41,12 +41,11 @@ function And() {
 
   function gateOutPut() {
     let gateOutput;
-      if (inputA == 1 && inputB == 1) {
-        gateOutput = "Output AB = True (1)";
-      } 
-      else {
-        gateOutput = "Output AB = False (0)";
-      }
+    if (inputA == 1 || inputB == 1) {
+      gateOutput = "Output AB = False (0)";
+    } else {
+      gateOutput = "Output AB = True (1)";
+    }
     return gateOutput;
   }
 
@@ -61,8 +60,8 @@ function And() {
           </Col>
           <Col md={10} style={{ paddingTop: "10vh" }}>
             <Card style={{ minHeight: "50vh" }}>
-              <CardHeader className="bg-success">
-                <h2 className="text-white">AND</h2>
+              <CardHeader className="bg-info">
+                <h2 className="text-white">NOR</h2>
               </CardHeader>
 
               <p
@@ -75,17 +74,19 @@ function And() {
               >
                 <br />
                 <b>
-                  The AND gate is an electronic circuit that gives a high output
-                  (1) only if all its inputs are high. A dot (.) is used to show
-                  the AND operation i.e. A.B. Bear in mind that this dot is
-                  sometimes omitted i.e. AB
+                  This is a NOT-OR gate which is equal to an OR gate followed by
+                  a NOT gate. The outputs of all NOR gates are low if any of the
+                  inputs are high.
+                  <br />
+                  The symbol is an OR gate with a small circle on the output.
+                  The small circle represents inversion.
                 </b>
                 <br />
                 <br />
                 <Container>
                   <Row>
                     <Col md={3}>
-                      <Image src={andImage} style={{ height: "120px" }} />
+                      <Image src={norImage} style={{ height: "120px" }} />
                       <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>
@@ -141,29 +142,29 @@ function And() {
                           <tr>
                             <th>A</th>
                             <th>B</th>
-                            <th>AB</th>
+                            <th>AB NOR</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>1</td>
                             <td>1</td>
-                            <td>1</td>
-                          </tr>
-                          <tr>
-                            <td>1</td>
-                            <td>0</td>
                             <td>0</td>
                           </tr>
                           <tr>
-                            <td>0</td>
                             <td>1</td>
+                            <td>0</td>
                             <td>0</td>
                           </tr>
                           <tr>
                             <td>0</td>
+                            <td>1</td>
+                            <td>0</td>
+                          </tr>
+                          <tr>
                             <td>0</td>
                             <td>0</td>
+                            <td>1</td>
                           </tr>
                         </tbody>
                       </Table>
@@ -179,4 +180,4 @@ function And() {
   );
 }
 
-export default And;
+export default Nor;

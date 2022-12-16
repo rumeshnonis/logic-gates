@@ -11,11 +11,11 @@ import {
   Table,
 } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
-import "./AND.css";
+import "./OR.css";
 import Sidebar from "../sidebar/sidebar";
-import andImage from "../../images/gates/and.jpg";
+import orImage from "../../images/gates/or.jpg";
 
-function And() {
+function Or() {
   const [inputA, setInputA] = useState("");
 
   const [updatedA, setUpdatedA] = useState(inputA);
@@ -23,6 +23,11 @@ function And() {
   const handleChangeA = (event) => {
     setInputA(event.target.value);
   };
+
+  //const handleClickA = () => {
+  // 👇 "message" stores input field value
+  //setUpdatedA(inputA);
+  //};
 
   const [inputB, setInputB] = useState("");
 
@@ -41,7 +46,7 @@ function And() {
 
   function gateOutPut() {
     let gateOutput;
-      if (inputA == 1 && inputB == 1) {
+      if (inputA == 1 || inputB == 1) {
         gateOutput = "Output AB = True (1)";
       } 
       else {
@@ -61,8 +66,8 @@ function And() {
           </Col>
           <Col md={10} style={{ paddingTop: "10vh" }}>
             <Card style={{ minHeight: "50vh" }}>
-              <CardHeader className="bg-success">
-                <h2 className="text-white">AND</h2>
+              <CardHeader className="bg-warning">
+                <h2 className="text-black">OR</h2>
               </CardHeader>
 
               <p
@@ -75,17 +80,16 @@ function And() {
               >
                 <br />
                 <b>
-                  The AND gate is an electronic circuit that gives a high output
-                  (1) only if all its inputs are high. A dot (.) is used to show
-                  the AND operation i.e. A.B. Bear in mind that this dot is
-                  sometimes omitted i.e. AB
+                  The OR gate is an electronic circuit that gives a high output
+                  (1) if one or more of its inputs are high. A plus (+) is used
+                  to show the OR operation.
                 </b>
                 <br />
                 <br />
                 <Container>
                   <Row>
                     <Col md={3}>
-                      <Image src={andImage} style={{ height: "120px" }} />
+                      <Image src={orImage} style={{ height: "120px" }} />
                       <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>
@@ -141,7 +145,7 @@ function And() {
                           <tr>
                             <th>A</th>
                             <th>B</th>
-                            <th>AB</th>
+                            <th>A OR B</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -153,12 +157,12 @@ function And() {
                           <tr>
                             <td>1</td>
                             <td>0</td>
-                            <td>0</td>
+                            <td>1</td>
                           </tr>
                           <tr>
                             <td>0</td>
                             <td>1</td>
-                            <td>0</td>
+                            <td>1</td>
                           </tr>
                           <tr>
                             <td>0</td>
@@ -179,4 +183,4 @@ function And() {
   );
 }
 
-export default And;
+export default Or;

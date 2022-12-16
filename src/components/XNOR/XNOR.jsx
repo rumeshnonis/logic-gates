@@ -11,11 +11,11 @@ import {
   Table,
 } from "react-bootstrap";
 import CardHeader from "react-bootstrap/esm/CardHeader";
-import "./AND.css";
+import "./XNOR.css";
 import Sidebar from "../sidebar/sidebar";
-import andImage from "../../images/gates/and.jpg";
+import xnorImage from "../../images/gates/xnor.jpg";
 
-function And() {
+function Xor() {
   const [inputA, setInputA] = useState("");
 
   const [updatedA, setUpdatedA] = useState(inputA);
@@ -41,12 +41,11 @@ function And() {
 
   function gateOutPut() {
     let gateOutput;
-      if (inputA == 1 && inputB == 1) {
-        gateOutput = "Output AB = True (1)";
-      } 
-      else {
-        gateOutput = "Output AB = False (0)";
-      }
+    if ((inputA == 0 && inputB == 0) || (inputA == 1 && inputB == 1)) {
+      gateOutput = "Output AB = True (1)";
+    } else {
+      gateOutput = "Output AB = False (0)";
+    }
     return gateOutput;
   }
 
@@ -61,8 +60,8 @@ function And() {
           </Col>
           <Col md={10} style={{ paddingTop: "10vh" }}>
             <Card style={{ minHeight: "50vh" }}>
-              <CardHeader className="bg-success">
-                <h2 className="text-white">AND</h2>
+              <CardHeader className="bg-secondary">
+                <h2 className="text-white">XNOR</h2>
               </CardHeader>
 
               <p
@@ -75,17 +74,18 @@ function And() {
               >
                 <br />
                 <b>
-                  The AND gate is an electronic circuit that gives a high output
-                  (1) only if all its inputs are high. A dot (.) is used to show
-                  the AND operation i.e. A.B. Bear in mind that this dot is
-                  sometimes omitted i.e. AB
+                  The 'Exclusive-NOR' gate circuit does the opposite to the EOR
+                  gate. It will give a low output if either, but not both, of
+                  its two inputs are high. The symbol is an EXOR gate with a
+                  small circle on the output. The small circle represents
+                  inversion.
                 </b>
                 <br />
                 <br />
                 <Container>
                   <Row>
                     <Col md={3}>
-                      <Image src={andImage} style={{ height: "120px" }} />
+                      <Image src={xnorImage} style={{ height: "120px" }} />
                       <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>
@@ -141,7 +141,7 @@ function And() {
                           <tr>
                             <th>A</th>
                             <th>B</th>
-                            <th>AB</th>
+                            <th>AB XNOR</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -163,7 +163,7 @@ function And() {
                           <tr>
                             <td>0</td>
                             <td>0</td>
-                            <td>0</td>
+                            <td>1</td>
                           </tr>
                         </tbody>
                       </Table>
@@ -179,4 +179,4 @@ function And() {
   );
 }
 
-export default And;
+export default Xor;
