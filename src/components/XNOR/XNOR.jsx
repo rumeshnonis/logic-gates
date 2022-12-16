@@ -10,6 +10,7 @@ import {
   Button,
   Table,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import CardHeader from "react-bootstrap/esm/CardHeader";
 import "./XNOR.css";
 import Sidebar from "../sidebar/sidebar";
@@ -167,6 +168,9 @@ function Xor() {
                           </tr>
                         </tbody>
                       </Table>
+                      <Button className="bg-secondary text-white">
+                        <Link to={"/notes"} className="text-white bg-secondary">Special Notes</Link>
+                      </Button>
                     </Col>
                   </Row>
                 </Container>

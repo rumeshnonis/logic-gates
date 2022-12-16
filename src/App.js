@@ -13,12 +13,15 @@ import Nand from "./components/NAND/NAND";
 import Nor from "./components/NOR/NOR";
 import Xor from "./components/XOR/XOR";
 import Xnor from "./components/XNOR/XNOR";
+import Notes from "./components/Notes/Notes";
+
 
 function App() {
   return (
       <div className="App">
     <Router>
       <Routes>
+
       <Route exact path="/" element={<Home />} />
       <Route exact path="/logic-gates" element={<Logicgates />} />
       <Route exact path="/truth-table" element={<TruthTables />} />
@@ -29,6 +32,7 @@ function App() {
       <Route exact path="/nor" element={<Nor />} />
       <Route exact path="/xor" element={<Xor />} />
       <Route exact path="/xnor" element={<Xnor />} />
+      <Route exact path="/notes" element={<Notes />} />
       
       </Routes>
     </Router>
